@@ -27,12 +27,14 @@ main{
     /* auto= "same margin to right and left for the example" at the top */
 }
 
-.exercise-theme{
+.exercise-theme,
+.last_exercise-theme{
     border: 4px solid rgb(110, 70, 52);
     background: url(./Assets/img/pexels-street-donkey-3705687.jpg);
     opacity: 0.900;
     padding: 10px;
     color: rgb(255, 255, 255);
+    margin-bottom: 10px;
 }
 
 h2{
@@ -62,4 +64,47 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.last_exercise-theme{
+    margin-bottom: 0;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.last_exercise-theme img{
+    width: 95%;
+    height: 95%;
+    margin: 3% 0 0 3%;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 25% 50% 25%;
+}
+
+#firstname{
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+#surname{
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+textarea{
+    resize: none;
+    grid-column-start: 1;
+    grid-column-end: span 3;
+    grid-row-start: 2;
+}
+
+#button{
+    grid-column-start: 2;
+    grid-row-start: 3;
 }
