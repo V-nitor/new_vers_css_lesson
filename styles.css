@@ -1,4 +1,7 @@
+/* --- General --- */
+
 @import url('https://fonts.googleapis.com/css2?family=Snowburst+One&display=swap');
+
 
 body{
     background: url(./Assets/img/pexels-peter-fazekas-19011374.jpg) center/cover;
@@ -26,6 +29,8 @@ main{
     margin: 0 auto
     /* auto= "same margin to right and left for the example" at the top */
 }
+
+/* --- The first exercise --- */
 
 .exercise-theme,
 .last_exercise-theme{
@@ -66,16 +71,14 @@ h2{
     align-items: center;
 }
 
-.last_exercise-theme{
-    margin-bottom: 0;
-}
+/* --- The last exercise --- */
 
 .grid-container{
     display: grid;
     grid-template-columns: 40% 60%;
 }
 
-.last_exercise-theme img{
+.exercise-theme img{
     width: 95%;
     height: 95%;
     margin: 3% 0 0 3%;
@@ -85,20 +88,43 @@ form{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 25% 50% 25%;
+    grid-row-gap: 5px;
+}
+
+input,
+textarea{
+    font-family: Snowburst One, cursive;
+    font-size: 10px;
+    color: rgb(0, 40, 255);
+    border: 1mm ridge rgb(32, 195, 208);
+    border-radius: 30px 10px;
+}
+
+/* Use this when you want to change the placeholder(s) */
+input::placeholder{
+    text-transform: capitalize;
+}
+
+/* :valid= "Activate only if in index.html there is 'required' somewhere" at the bottom */
+input[type=text]:valid{
+    border: 1mm ridge rgb(80, 65, 35)
 }
 
 #firstname{
     grid-column-start: 1;
     grid-row-start: 1;
+    text-transform: capitalize;
 }
 
 #surname{
     grid-column-start: 3;
     grid-row-start: 1;
+    text-transform: uppercase;
 }
 
 textarea{
     resize: none;
+    padding: 15px 10px;
     grid-column-start: 1;
     grid-column-end: span 3;
     grid-row-start: 2;
@@ -107,4 +133,43 @@ textarea{
 #button{
     grid-column-start: 2;
     grid-row-start: 3;
+    cursor: pointer;
+    background-color: rgb(32, 195, 208);
+    transition: 3s;
+}
+
+#button:hover{
+    background-color: rgb(255, 255, 255);
+}
+
+/* --- Position absolute --- */
+
+.last_exercise-theme{
+    margin-bottom: 0;
+    /* Info= To keep the children with "position: absolute" inside of the parent, you must clarify who became "position: relative" at the bottom */
+    position: relative;
+    min-height: 20rem;
+}
+
+#square1,
+#square2{
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    background-color: rgb(32, 195, 208);
+    height: 50px;
+    width: 50px;
+}
+
+#square1{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#square2{
+    position: absolute;
+    left: 50%;
+    bottom: 40%;
+    transform: translateX(-50%) translateY(50%);
 }
