@@ -71,7 +71,7 @@ h2{
     align-items: center;
 }
 
-/* --- The last exercise --- */
+/* --- The second exercise --- */
 
 .grid-container{
     display: grid;
@@ -142,7 +142,7 @@ textarea{
     background-color: rgb(255, 255, 255);
 }
 
-/* --- Position absolute --- */
+/* --- Position absolute - last exercise --- */
 
 .last_exercise-theme{
     margin-bottom: 0;
@@ -172,4 +172,50 @@ textarea{
     left: 50%;
     bottom: 40%;
     transform: translateX(-50%) translateY(50%);
+}
+
+/* --- Last part: RESPONSIVE --- */
+
+@media screen and (max-width: 740px) {
+   
+    .grid-container{
+        display:block;
+    }
+
+    .exercise-theme img{
+        display: block;
+        background-size: contain;
+        width: 300px;
+        height: 170px;
+        margin: 3% auto;
+    }
+
+    input{
+        height: 60px;
+    }
+
+}
+
+@media screen and (max-width: 470px) {
+
+    h2{
+        word-spacing: 10rem;
+    }
+
+    form{
+        display: block;
+    }
+
+    .exercise-theme img{
+        width: 55vw;
+        height: 135px;
+    }
+
+    input,
+    textarea{
+        display: block;
+        width: 75%;
+        margin: 10px auto;
+    }
+
 }
